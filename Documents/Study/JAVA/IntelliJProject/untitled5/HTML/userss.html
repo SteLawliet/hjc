@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>user</title>
+    <style type="text/css">
+        body {
+            margin: 0 auto;
+            text-align: center
+        }
+
+        .tab {
+            font-size: 23px;
+            border-color: #b3d4fc;
+        }
+    </style>
+</head>
+<body>
+<br>
+<br>
+<div>
+    添加用户:<br><br>
+    姓名: <input type="text" name="name" id="name"/>&nbsp;&nbsp;
+    email: <input type="text" name="email" id="email"/>&nbsp;&nbsp;
+    <br>电话: <input type="text" name="tel" id="phone"/><br><br>
+    <input type="button" id="addUser" value="添加" onclick="addUser();"/>
+    <input type="button"  value="赞" onclick="add();" id="one"/>&nbsp;&nbsp;<b id="cunt">0</b>
+
+
+</div>
+<br>
+<br>
+<hr>
+<table align="center" border="1px" cellpadding="10" cellspacing="0" class="tab" id="userTable">
+    <tr>
+
+        <th>
+            name
+        </th>
+        <th>
+            email
+        </th>
+        <th>
+            phone
+        </th>
+        <th>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+        </th>
+    </tr>
+    <tr>
+        <td>las</td>
+        <td>123@ss.com</td>
+        <td>123456</td>
+        <td><a href="javascript:void(0)" onclick="Del(this)">del</a></td>
+    </tr>
+
+</table>
+<script>
+
+    function al() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;
+        var phone = document.getElementById("phone").value;
+        alert("ssss");
+
+    }
+
+    function addUser() {
+        var name = document.getElementById("name").value;
+        var email = document.getElementById("email").value;2
+        var phone = document.getElementById("phone").value;
+        //alert("111");
+        var new_tr = document.createElement("tr");
+        new_tr.innerHTML
+            = "<td>"+name+"</td><td>" +email+"</td><td>" +phone+ "</td><td><a href='javascript:void(0)' onclick='Del(this)' >Delete</a></td>";
+        document.getElementById("userTable").appendChild(new_tr);
+    }
+    function Del(al) {
+        al.parentNode.parentNode.parentNode.removeChild(al.parentNode.parentNode);
+    }
+    function add() {
+        var count = document.getElementById("cunt").innerHTML;
+        count=+count;
+        count= count+1;
+        document.getElementById("cunt").innerHTML=count;
+        document.getElementById("one").value="QUX";
+
+    }
+
+
+</script>
+
+</body>
+</html>

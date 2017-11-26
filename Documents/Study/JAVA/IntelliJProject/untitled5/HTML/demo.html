@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function fn(s) {
+        console.log(s);
+    }
+    function fn1(fn) {
+        var a =1;
+        var b = 2;
+        var sum = a+b;
+        fn(sum);
+    }
+    window.setTimeout('fn1(fn)',3000);
+    window.setTimeout('fn(12)',3000);
+    window.setTimeout('console.log("11")',1);
+    console.log("pre");
+    console.log("pre1");
+    alert("pre2");
+</script>
+</body>
+</html>
